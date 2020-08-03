@@ -37,7 +37,7 @@ class State(models.Model):
 
     class Meta:
         verbose_name_plural = "States"
-        unique_together = ('name',)
+        unique_together = ('country', 'name',)
 
 
 class City(models.Model):

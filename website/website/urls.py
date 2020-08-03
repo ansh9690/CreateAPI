@@ -6,6 +6,7 @@ from api import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('person/', views.PersonList.as_view()),
+    path('person/<int:pk>/', views.PersonDetail.as_view()),
 
 ]
 
