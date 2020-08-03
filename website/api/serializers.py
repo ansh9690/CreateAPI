@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Person, Country, State, City
+from .models import Person, Country, State, City, Town
 
 
 class PersonSerializer(serializers.ModelSerializer):
@@ -23,4 +23,10 @@ class StateSerializer(serializers.ModelSerializer):
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
+        fields = '__all__'
+
+
+class TownSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Town
         fields = '__all__'
