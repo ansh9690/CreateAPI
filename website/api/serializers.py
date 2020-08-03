@@ -15,7 +15,7 @@ class CountrySerializer(serializers.ModelSerializer):
 
 
 class StateSerializer(serializers.ModelSerializer):
-    country = CountrySerializer(many=True, read_only=True)
+    # country = CountrySerializer(many=True, read_only=True)
 
     class Meta:
         model = State
