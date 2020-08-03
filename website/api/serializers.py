@@ -15,18 +15,26 @@ class CountrySerializer(serializers.ModelSerializer):
 
 
 class StateSerializer(serializers.ModelSerializer):
+    country = CountrySerializer(many=True, read_only=True)
+
     class Meta:
         model = State
         fields = '__all__'
 
 
 class CitySerializer(serializers.ModelSerializer):
+    state = StateSerializer(many=True, read_only=True)
+    country = CountrySerializer(many=True, read_only=True)
+
     class Meta:
         model = City
         fields = '__all__'
 
 
 class TownSerializer(serializers.ModelSerializer):
+    state = StateSerializer(many=True, read_only=True)
+    country = CountrySerializer(many=True, read_only=True)
+
     class Meta:
         model = Town
         fields = '__all__'
